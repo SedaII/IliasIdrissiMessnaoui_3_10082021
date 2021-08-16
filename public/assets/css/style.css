@@ -1,5 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
 body {
-  background-color: grey;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.Nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Nav img {
+  width: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */

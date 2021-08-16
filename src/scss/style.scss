@@ -1,3 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
+
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-ternary: #99E2D0;
+$color-quaternary: #008766;
+$color-dark-grey: #353535;
+$color-light-grey: #eaeaea;
+$color-lighter-grey: #f6f6f6;
+
 body {
-  background-color: grey;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+// global 
+
+.row {
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+//////////////////
+
+.Nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 50%;
+  }
 }
