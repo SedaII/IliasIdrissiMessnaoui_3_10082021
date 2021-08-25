@@ -11,109 +11,54 @@
 <body>
   <header>
     <nav class="Nav">
+      <a href="./index.html" class="Nav__link">
+        <i class="fas fa-arrow-left"></i>
+      </a>
       <img src="./assets/img/logo/ohmyfood.png" alt="logo ohmyfood">
     </nav>
   </header>
 
-  <div class="Location row">
-    <i class="fas fa-map-marker-alt"></i>
-    <p>
-      Paris, Belleville
-    </p>
-  </div>
+  <img src="./assets/img/restaurants/palette.jpg" alt="La palette du goût" class="Image">
 
-  <div class="Intro column">
-    <h2 class="Intro__header">Réservez le menu qui vous convient</h2>
-    <p>
-      Découvrez des restaurants d'exception, séléctionnés par nos soins.
-    </p>
-    <button type="button" class="Intro__button">Explorer nos restaurants</button>
-  </div>
+  <main class="menu-container">
+    <header class="title row">
+      <h2>La palette du goût</h2>
+      <i class="far fa-heart"></i>
+    </header>
 
-  <div class="Instruction column">
-    <h2>Fonctionnement</h2>
-    <div class="step-container column">
-      <div class="Instruction__step">
-        <div class="Instruction__index">
-          1
-        </div>
-        <i class="fas fa-mobile-alt"></i>
-        Choisissez un restaurant
-      </div>
-      <div class="Instruction__step">
-        <div class="Instruction__index">
-          2
-        </div>
-        <i class="fas fa-list-ul"></i>
-        Composez votre menu
-      </div>
-      <div class="Instruction__step last">
-        <div class="Instruction__index">
-          3
-        </div>
-        <i class="fas fa-store"></i>
-        Dégustez au restaurant
-      </div>
-    </div>
-  </div>
+    <section class="Menu">
+      <h3 class="Menu__title">
+        ENTRÉES
+      </h3>
+      <div class="item-container column">
+        <article class="Menu__item">
+          <div class="Menu__item-content column">
+            <h4 class="Menu__title">Fricassée d'escargot</h4>
+            <div class="Menu__content-details row">
+              <div class="Menu__description">Au piment d'espelette tessssssssssssssssssssssssssssss</div>
+              <div class="Menu__price">25€</div>
+            </div>
+          </div>
+          <div class="Menu__check">
+            <i class="fas fa-check-circle"></i>
+          </div>
+        </article>
 
-  <div class="Restaurant column">
-    <h2>Restaurants</h2>
-    <a href="./palette.html" class="Restaurant__card column">
-      <div class="notif">
-        Nouveau
+        <article class="Menu__item row">
+          <div class="Menu__item-content column">
+            <h4 class="Menu__title">Fricassée d'escargot</h4>
+            <div class="Menu__content-details row">
+              <div class="Menu__description">Au piment d'espelette tessssssssssssssssssssssssssssss</div>
+              <div class="Menu__price">25€</div>
+            </div>
+          </div>
+          <div class="Menu__check">
+            <i class="fas fa-check-circle"></i>
+          </div>
+        </article>
       </div>
-      <img src="./assets/img/restaurants/palette.jpg" alt="La palette du goût">
-      <div class="Restaurant__card-content row">
-        <div class="column">
-          <h4>La palette du goût</h4>
-          Ménilmontant
-        </div>
-        <div class="icon-container">
-          <i class="far fa-heart"></i>
-        </div>
-      </div>
-    </a>
-    <a href="#" class="Restaurant__card column">
-      <div class="notif">
-        Nouveau
-      </div>
-      <img src="./assets/img/restaurants/note.jpg" alt="La note enchantée" class="portrait">
-      <div class="Restaurant__card-content row">
-        <div class="column">
-          <h4>La note enchantée</h4>
-          Charonne
-        </div>
-        <div class="icon-container">
-          <i class="far fa-heart"></i>
-        </div>
-      </div>
-    </a>
-    <a href="#" class="Restaurant__card column">
-      <img src="./assets/img/restaurants/française.jpg" alt="À la française">
-      <div class="Restaurant__card-content row">
-        <div class="column">
-          <h4>À la française</h4>
-          Cité Rouge
-        </div>
-        <div class="icon-container">
-          <i class="far fa-heart"></i>
-        </div>
-      </div>
-    </a>
-    <a href="#" class="Restaurant__card column">
-      <img src="./assets/img/restaurants/délice.jpg" alt="Le délice des sens">
-      <div class="Restaurant__card-content row">
-        <div class="column">
-          <h4>Le délice des sens</h4>
-          Folie-Méricourt
-        </div>
-        <div class="icon-container">
-          <i class="far fa-heart"></i>
-        </div>
-      </div>
-    </a>
-  </div>
+    </section>
+  </main>
 
   <footer class="Footer column">
     <svg width="100" height="auto" viewBox="0 0 196 34" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">

@@ -13,6 +13,11 @@ body {
   flex-direction: column;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .Nav {
   width: 100%;
   height: 50px;
@@ -24,6 +29,11 @@ body {
   z-index: 10;
   top: 0;
   background-color: #fff;
+}
+.Nav__link {
+  font-size: 18px;
+  position: absolute;
+  left: 1.5rem;
 }
 .Nav img {
   width: 46%;
@@ -79,6 +89,215 @@ body {
   background: linear-gradient(175deg, #FF79DA, #9356DC);
   box-shadow: 0 3px 6px #aaa;
   margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.Instruction {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+.Instruction .step-container {
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
+.Instruction__step {
+  width: 90%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f6f6;
+  border-radius: 25px;
+  box-shadow: 0 3px 6px #ccc;
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+.Instruction__step i {
+  font-size: 18px;
+  color: #888;
+  position: absolute;
+  left: 11%;
+}
+.Instruction .last {
+  background-color: rgba(147, 86, 220, 0.1);
+}
+.Instruction .last i {
+  color: #9356DC;
+}
+.Instruction__index {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  background-color: #9356DC;
+  color: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  transform: translateX(-50%);
+}
+
+.Restaurant {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 2rem 1rem;
+  background-color: #f6f6f6;
+}
+.Restaurant__card {
+  width: 100%;
+  height: 254px;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 3px 6px #ccc;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1.2rem;
+}
+.Restaurant__card .notif {
+  width: 80px;
+  height: 28px;
+  color: #008766;
+  background-color: #99E2D0;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 500;
+}
+.Restaurant__card .portrait {
+  object-position: 0 -154px;
+}
+.Restaurant__card img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  object-position: 0 -46px;
+}
+.Restaurant__card-content {
+  width: 100%;
+  height: 30%;
+  box-sizing: border-box;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 300;
+}
+.Restaurant__card-content h4 {
+  margin: 0;
+  font-size: 18px;
+}
+.Restaurant__card-content i {
+  font-size: 28px;
+  margin-right: 8px;
+}
+.Restaurant__card-content i:hover, .Restaurant__card-content i:active {
+  display: block;
+  color: #9356DC;
+  font-weight: 900;
+}
+
+.Footer {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 1.5rem;
+  background-color: #353535;
+  color: white;
+}
+.Footer ul {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 1rem 0 0 0;
+  padding: 0;
+}
+.Footer ul li {
+  list-style: none;
+  margin-bottom: 0.5rem;
+  font-size: 15px;
+}
+.Footer ul li i {
+  font-size: 14px;
+  margin-right: 6px;
+}
+
+.Image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.menu-container {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #f6f6f6;
+  padding: 1rem;
+}
+
+.Menu {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.Menu .item-container {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.Menu__item {
+  width: 100%;
+  height: 64px;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 3px 6px #ccc;
+  align-items: center;
+  overflow: hidden;
+}
+.Menu__item-content {
+  height: 100%;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0.6rem 1.5rem 0.6rem 0.5rem;
+  flex-grow: 0.5;
+}
+.Menu__title {
+  margin: 0;
+}
+.Menu__content-details {
+  justify-content: space-between;
+}
+.Menu__description {
+  margin-right: 1rem;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.Menu__check {
+  height: 100%;
+  display: flex;
+  background-color: #99E2D0;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */
