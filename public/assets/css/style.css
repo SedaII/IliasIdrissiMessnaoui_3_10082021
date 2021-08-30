@@ -86,10 +86,32 @@ a {
   color: #fff;
   font-size: 16px;
   font-weight: 500;
-  background: linear-gradient(175deg, #FF79DA, #9356DC);
+  background: linear-gradient(175deg, #ff79da, #9356dc);
   box-shadow: 0 3px 6px #aaa;
   margin-bottom: 1rem;
   cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+.Intro__button::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  opacity: 0;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.Intro__button:hover {
+  box-shadow: 0 4px 6px #888;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.Intro__button:hover::after {
+  opacity: 0.3;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .Instruction {
@@ -128,7 +150,7 @@ a {
   background-color: rgba(147, 86, 220, 0.1);
 }
 .Instruction .last i {
-  color: #9356DC;
+  color: #9356dc;
 }
 .Instruction__index {
   width: 24px;
@@ -137,7 +159,7 @@ a {
   align-items: center;
   justify-content: center;
   font-size: 12px;
-  background-color: #9356DC;
+  background-color: #9356dc;
   color: white;
   border-radius: 50%;
   position: absolute;
@@ -152,6 +174,10 @@ a {
   padding: 2rem 1rem;
   background-color: #f6f6f6;
 }
+.Restaurant__card-container {
+  position: relative;
+  margin-bottom: 1.2rem;
+}
 .Restaurant__card {
   width: 100%;
   height: 254px;
@@ -161,13 +187,12 @@ a {
   box-shadow: 0 3px 6px #ccc;
   overflow: hidden;
   position: relative;
-  margin-bottom: 1.2rem;
 }
 .Restaurant__card .notif {
   width: 80px;
   height: 28px;
   color: #008766;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   position: absolute;
   right: 12px;
   top: 12px;
@@ -194,19 +219,48 @@ a {
   align-items: center;
   justify-content: space-between;
   font-weight: 300;
+  position: relative;
 }
 .Restaurant__card-content h4 {
   margin: 0;
   font-size: 18px;
 }
-.Restaurant__card-content i {
-  font-size: 28px;
-  margin-right: 8px;
+.Restaurant .icon-btn {
+  width: 28px;
+  height: 28px;
+  background-color: transparent;
+  border: 0;
+  position: absolute;
+  right: 0;
+  bottom: 24px;
+  z-index: 100;
+  margin-right: 24px;
 }
-.Restaurant__card-content i:hover, .Restaurant__card-content i:active {
-  display: block;
-  color: #9356DC;
+.Restaurant .icon-btn i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 28px;
+}
+.Restaurant .icon-btn .empty {
+  opacity: 1;
+}
+.Restaurant .icon-btn .full {
+  opacity: 0;
+  transform: scale(0);
+  background: -webkit-linear-gradient(-45deg, #ff79da, #9356dc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: 900;
+}
+.Restaurant .icon-btn:active .empty, .Restaurant .icon-btn:focus .empty {
+  opacity: 0;
+  transition: opacity 0.3s 0.1s ease-in-out;
+}
+.Restaurant .icon-btn:active .full, .Restaurant .icon-btn:focus .full {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.4s ease-in;
 }
 
 .Footer {
@@ -231,6 +285,10 @@ a {
 .Footer ul li i {
   font-size: 14px;
   margin-right: 6px;
+}
+.Footer ul li .small {
+  font-size: 12px;
+  width: 12px;
 }
 
 .Image {
@@ -262,8 +320,6 @@ a {
   width: 100%;
   height: 64px;
   box-sizing: border-box;
-  display: flex;
-  flex-flow: row wrap;
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 3px 6px #ccc;
@@ -271,29 +327,30 @@ a {
   overflow: hidden;
 }
 .Menu__item-content {
+  width: 80%;
   height: 100%;
   justify-content: space-between;
   box-sizing: border-box;
   padding: 0.6rem 1.5rem 0.6rem 0.5rem;
-  flex-grow: 0.5;
 }
 .Menu__title {
   margin: 0;
 }
 .Menu__content-details {
+  align-items: center;
   justify-content: space-between;
 }
 .Menu__description {
-  margin-right: 1rem;
-  box-sizing: border-box;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  margin-right: 1rem;
 }
 .Menu__check {
+  width: 20%;
   height: 100%;
   display: flex;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   color: white;
   align-items: center;
   justify-content: center;
