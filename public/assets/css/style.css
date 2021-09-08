@@ -1,21 +1,43 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
-body {
-  font-family: "Roboto", Arial, sans-serif;
-  margin: 0;
+@keyframes app-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
-
-.row {
-  display: flex;
+@keyframes loader-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
-
-.column {
-  display: flex;
-  flex-direction: column;
+@keyframes loading {
+  to {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(360deg);
+  }
 }
-
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.Loader {
+  position: absolute;
+  z-index: 10;
+  animation: loader-fade-out 0.3s ease-in 3s both, loading 1.5s linear infinite;
+}
+
+.App {
+  animation: app-fade-in 0.3s ease-in 3s both;
 }
 
 .Nav {
@@ -26,8 +48,8 @@ a {
   justify-content: center;
   box-shadow: 0 0 5px #aaa;
   position: fixed;
-  z-index: 10;
-  top: 0;
+  z-index: 100;
+  top: -50px;
   background-color: #fff;
 }
 .Nav__link {
@@ -35,7 +57,7 @@ a {
   position: absolute;
   left: 1.5rem;
 }
-.Nav img {
+.Nav__logo {
   width: 46%;
 }
 
@@ -50,7 +72,7 @@ a {
   color: #353535;
   position: relative;
 }
-.Location i {
+.Location__icon {
   position: absolute;
   left: 28%;
 }
@@ -81,6 +103,7 @@ a {
 .Intro__button {
   width: 60%;
   height: 50px;
+  max-width: 300px;
   border-radius: 50px;
   border: 0;
   color: #fff;
@@ -131,6 +154,7 @@ a {
 .Instruction__step {
   width: 90%;
   height: 70px;
+  max-width: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -225,7 +249,7 @@ a {
   margin: 0;
   font-size: 18px;
 }
-.Restaurant .icon-btn {
+.Restaurant .heart-btn {
   width: 28px;
   height: 28px;
   background-color: transparent;
@@ -233,19 +257,19 @@ a {
   position: absolute;
   right: 0;
   bottom: 24px;
-  z-index: 100;
   margin-right: 24px;
+  z-index: 0;
 }
-.Restaurant .icon-btn i {
+.Restaurant .heart-btn i {
   position: absolute;
   top: 0;
   left: 0;
   font-size: 28px;
 }
-.Restaurant .icon-btn .empty {
+.Restaurant .heart-btn .empty {
   opacity: 1;
 }
-.Restaurant .icon-btn .full {
+.Restaurant .heart-btn .full {
   opacity: 0;
   transform: scale(0);
   background: -webkit-linear-gradient(-45deg, #ff79da, #9356dc);
@@ -253,11 +277,11 @@ a {
   -webkit-text-fill-color: transparent;
   font-weight: 900;
 }
-.Restaurant .icon-btn:active .empty, .Restaurant .icon-btn:focus .empty {
+.Restaurant .heart-btn:active .empty, .Restaurant .heart-btn:focus .empty {
   opacity: 0;
   transition: opacity 0.3s 0.1s ease-in-out;
 }
-.Restaurant .icon-btn:active .full, .Restaurant .icon-btn:focus .full {
+.Restaurant .heart-btn:active .full, .Restaurant .heart-btn:focus .full {
   opacity: 1;
   transform: scale(1);
   transition: all 0.4s ease-in;
@@ -291,17 +315,154 @@ a {
   width: 12px;
 }
 
+@media screen and (min-width: 768px) {
+  .Nav {
+    height: 90px;
+  }
+
+  .Location {
+    margin-top: 90px;
+  }
+  .Location__icon {
+    position: static;
+    margin-right: 1rem;
+  }
+
+  .Instruction .step-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .Instruction__step {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .Restaurant .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+  }
+
+  .Footer ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+@keyframes item-fade-in {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 .Image {
   width: 100%;
   height: 300px;
   object-fit: cover;
+  position: relative;
+  top: 50px;
+  z-index: -1;
 }
 
 .menu-container {
   width: 100%;
   box-sizing: border-box;
   background-color: #f6f6f6;
-  padding: 1rem;
+  padding: 0.5rem 1rem 1rem 1rem;
+  border-radius: 40px 40px 0 0;
+}
+.menu-container .title {
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu-container .title h2 {
+  font-family: "Shrikhand", "Roboto", Arial, sans-serif;
+  font-size: 26px;
+}
+.menu-container .title .heart-btn {
+  width: 28px;
+  height: 28px;
+  background-color: transparent;
+  border: 0;
+  margin-right: 12px;
+  z-index: 10;
+  position: relative;
+}
+.menu-container .title .heart-btn i {
+  font-size: 28px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.menu-container .title .heart-btn .empty {
+  opacity: 1;
+}
+.menu-container .title .heart-btn .full {
+  opacity: 0;
+  transform: scale(0);
+  background: -webkit-linear-gradient(-45deg, #ff79da, #9356dc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+}
+.menu-container .title .heart-btn:active .empty, .menu-container .title .heart-btn:focus .empty {
+  opacity: 0;
+  transition: opacity 0.3s 0.1s ease-in-out;
+}
+.menu-container .title .heart-btn:active .full, .menu-container .title .heart-btn:focus .full {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.4s ease-in;
+}
+.menu-container .btn-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0 2rem 0;
+}
+.menu-container .btn-container .menu-btn {
+  width: 60%;
+  height: 50px;
+  max-width: 300px;
+  border-radius: 50px;
+  border: 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  background: linear-gradient(175deg, #ff79da, #9356dc);
+  box-shadow: 0 3px 6px #aaa;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+.menu-container .btn-container .menu-btn::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  opacity: 0;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.menu-container .btn-container .menu-btn:hover {
+  box-shadow: 0 4px 6px #888;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.menu-container .btn-container .menu-btn:hover::after {
+  opacity: 0.3;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .Menu {
@@ -309,12 +470,27 @@ a {
   height: 100%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 1.8rem;
+}
+.Menu__type {
+  font-weight: 300;
+  font-size: 16px;
+  margin-bottom: 0.8rem;
+}
+.Menu__type::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 4px;
+  background-color: #99e2d0;
+  margin-top: 0.2rem;
 }
 .Menu .item-container {
   width: 100%;
   height: 100%;
   align-items: center;
   justify-content: center;
+  row-gap: 1rem;
 }
 .Menu__item {
   width: 100%;
@@ -322,19 +498,30 @@ a {
   box-sizing: border-box;
   background-color: white;
   border-radius: 15px;
+  border: none;
   box-shadow: 0 3px 6px #ccc;
   align-items: center;
   overflow: hidden;
+  animation: item-fade-in 0.3s ease-in both;
 }
-.Menu__item:hover .Menu__check {
+.Menu__item--1 {
+  animation-delay: 150ms;
+}
+.Menu__item--2 {
+  animation-delay: 300ms;
+}
+.Menu__item--3 {
+  animation-delay: 450ms;
+}
+.Menu__item:hover .Menu__check, .Menu__item:focus .Menu__check {
   width: 20%;
   transition: width 0.3s ease-in;
 }
-.Menu__item:hover .Menu__item-content {
+.Menu__item:hover .Menu__item-content, .Menu__item:focus .Menu__item-content {
   width: 80%;
   transition: width 0.3s ease-in;
 }
-.Menu__item:hover .fa-check-circle {
+.Menu__item:hover .fa-check-circle, .Menu__item:focus .fa-check-circle {
   transform: rotate(360deg);
   transition: transform 0.4s ease-in;
 }
@@ -359,6 +546,9 @@ a {
   overflow: hidden;
   margin-right: 1rem;
 }
+.Menu__price {
+  font-weight: 700;
+}
 .Menu__check {
   width: 0%;
   height: 100%;
@@ -369,6 +559,20 @@ a {
   justify-content: center;
   font-size: 22px;
   transition: width 0.3s ease-in;
+}
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=style.css.map */

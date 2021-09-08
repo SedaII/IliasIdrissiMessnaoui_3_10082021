@@ -1,0 +1,251 @@
+@import "heart-btn";
+@import "animations";
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.Loader {
+  position: absolute;
+  z-index: 10;
+  animation: loader-fade-out .3s ease-in 3s both, loading 1.5s linear infinite;
+}
+
+.App {
+  animation: app-fade-in .3s ease-in 3s both
+}
+
+.Nav {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 5px #aaa;
+  position: fixed;
+  z-index: 100;
+  top: -50px;
+  background-color: #fff;
+
+  &__link {
+    font-size: 18px;
+    position: absolute;
+    left: 1.5rem;
+  }
+
+  &__logo {
+    width: 46%;
+  }
+}
+
+.Location {
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-light-grey;
+  margin-top: 50px;
+  font-size: 16px;
+  color: $color-dark-grey;
+  position: relative;
+
+  &__icon {
+    position: absolute;
+    left: 28%;
+  }
+}
+
+.Intro {
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow-wrap: break-word;
+  background-color: $color-lighter-grey;
+  padding: 2rem 0;
+
+  &__header {
+    width: 75%;
+    margin: 0 0 0.5rem 0;
+    font-weight: bold;
+    font-size: 26px;
+  }
+
+  p {
+    width: 85%;
+    font-size: 18px;
+    margin: 0 0 1.8rem 0;
+    font-weight: 300;
+    color: $color-dark-grey;
+  }
+
+  &__button {
+    @include btn
+  }
+}
+
+.Instruction {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+
+  .step-container {
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__step {
+    width: 90%;
+    height: 70px;
+    max-width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-lighter-grey;
+    border-radius: 25px;
+    box-shadow: 0 3px 6px #ccc;
+    margin-bottom: 1.2rem;
+    position: relative;
+
+    i {
+      font-size: 18px;
+      color: #888;
+      position: absolute;
+      left: 11%;
+    }
+  }
+
+  & .last {
+    background-color: rgba($color-primary, 0.1);
+
+    i {
+      color: $color-primary;
+    }
+  }
+
+  &__index {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    background-color: $color-primary;
+    color: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    transform: translateX(-50%);
+  }
+}
+
+.Restaurant {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 2rem 1rem;
+  background-color: $color-lighter-grey;
+
+  &__card-container {
+    position: relative;
+    margin-bottom: 1.2rem;
+  }
+
+  &__card {
+    width: 100%;
+    height: 254px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 3px 6px #ccc;
+    overflow: hidden;
+    position: relative;
+
+    .notif {
+      width: 80px;
+      height: 28px;
+      color: $color-quaternary;
+      background-color: $color-ternary;
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .portrait {
+      object-position: 0 -154px;
+    }
+
+    img {
+      width: 100%;
+      height: 70%;
+      object-fit: cover;
+      object-position: 0 -46px;
+    }
+  }
+
+  &__card-content {
+    width: 100%;
+    height: 30%;
+    box-sizing: border-box;
+    padding: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 300;
+    position: relative;
+
+    h4 {
+      margin: 0;
+      font-size: 18px;
+    }
+  }
+
+  .heart-btn {
+    @include heart-btn-home;
+  }
+}
+
+.Footer {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 1.5rem;
+  background-color: $color-dark-grey;
+  color: white;
+
+  ul {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 1rem 0 0 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+      margin-bottom: 0.5rem;
+      font-size: 15px;
+
+      i {
+        font-size: 14px;
+        margin-right: 6px;
+      }
+
+      .small {
+        font-size: 12px;
+        width: 12px;
+      }
+    }
+  }
+}
+
+@import "responsive";

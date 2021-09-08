@@ -1,0 +1,44 @@
+@media screen and (min-width: 768px) {
+  .Nav {
+    height: 90px;
+  }
+
+  .Location {
+    margin-top: 90px;
+
+    &__icon {
+      position: static;
+      margin-right: 1rem
+    }
+  }
+
+  .Instruction {
+    .step-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    &__step {
+      width: 100%;
+      margin-bottom: 0;
+    }
+  }
+
+  .Restaurant {
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 1rem;
+    }
+  }
+
+  .Footer {
+    ul {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
