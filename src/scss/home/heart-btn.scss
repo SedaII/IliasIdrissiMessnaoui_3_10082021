@@ -1,55 +1,15 @@
-@mixin heart-btn-home {
-  width: 28px;
-  height: 28px;
-  background-color: transparent;
-  border: 0;
-  position: absolute;
-  right: 0;
-  bottom: 24px;
-  margin-right: 24px;
-  z-index: 0;
-  i {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 28px;
-  }
-  .empty {
-    opacity: 1;
-  }
-  .full {
-    opacity: 0;
-    transform: scale(0);
-    background: -webkit-linear-gradient(
-      -45deg,
-      $color-secondary,
-      $color-primary
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 900;
-  }
-  &:active, &:focus {
-    .empty {
-      opacity: 0;
-      transition: opacity .3s .1s ease-in-out;
-    }
-    .full {
-      opacity: 1;
-      transform: scale(1);
-      transition: all .4s ease-in;
-    }
-  }
-}
-
-@mixin heart-btn-menu {
+@mixin heart-btn($position) {
   width: 28px;
   height: 28px;
   background-color: transparent;
   border: 0;
   margin-right: 12px;
   z-index: 10;
-  position: relative;
+  position: $position;
+  @if $position == absolute {
+    right: 0;
+    bottom: 24px;
+  }
   i {
     font-size: 28px;
     position: absolute;
@@ -84,3 +44,4 @@
   }
 }
 
+//Function

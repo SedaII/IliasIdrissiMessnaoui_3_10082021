@@ -28,7 +28,7 @@
     }
 
     .heart-btn {
-      @include heart-btn-menu;
+      @include heart-btn($position: relative);
     }
   }
 
