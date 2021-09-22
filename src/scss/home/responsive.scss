@@ -1,6 +1,8 @@
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 750px) {
   .Nav {
     height: 90px;
+    animation: nav-translate .3s ease-in 1.5s backwards;
+
   }
 
   .Location {
@@ -42,3 +44,32 @@
     }
   }
 }
+
+@media screen and (min-width: 1280px) {
+  .Restaurant {
+    .container {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
+
+@media screen and (min-width: 1336px) {
+  .App {
+    max-width: 1336px;
+    margin: auto;
+
+    .Nav {
+      max-width: 1336px;
+    margin: auto;
+    }
+
+    .Instruction, .Restaurant {
+      padding: 0 3rem
+    }
+
+    .Footer {
+      padding: 1rem 3rem;
+    }
+  }
+}
+
