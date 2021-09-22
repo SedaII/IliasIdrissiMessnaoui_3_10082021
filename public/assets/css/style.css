@@ -646,6 +646,28 @@ a {
   transition: width 0.3s ease-in;
 }
 
+.Nav-menu {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 5px #aaa;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  background-color: #fff;
+}
+.Nav-menu__link {
+  font-size: 18px;
+  position: absolute;
+  left: 1.5rem;
+}
+.Nav-menu__logo {
+  width: 46%;
+  max-width: 400px;
+}
+
 @media screen and (min-width: 750px) {
   .menu-container .title {
     justify-content: start;
@@ -659,6 +681,10 @@ a {
     grid-template-columns: 1fr 1fr;
     column-gap: 1rem;
   }
+
+  .Nav-menu {
+    height: 90px;
+  }
 }
 @media screen and (min-width: 1280px) {
   .Menu .item-container {
@@ -666,11 +692,11 @@ a {
   }
 }
 @media screen and (min-width: 1336px) {
-  body, .Nav {
+  body, .Nav-menu {
     max-width: 1336px;
     margin: auto;
   }
-  body .menu-container, body .Footer, .Nav .menu-container, .Nav .Footer {
+  body .menu-container, body .Footer, .Nav-menu .menu-container, .Nav-menu .Footer {
     padding: 1rem 4rem;
   }
 }

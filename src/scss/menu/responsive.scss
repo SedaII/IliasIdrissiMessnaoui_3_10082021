@@ -16,6 +16,10 @@
       column-gap: 1rem;
     }
   }
+
+  .Nav-menu {
+    height: 90px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
@@ -27,7 +31,7 @@
 }
 
 @media screen and (min-width: 1336px) {
-  body, .Nav {
+  body, .Nav-menu {
     max-width: 1336px;
     margin: auto;
 
